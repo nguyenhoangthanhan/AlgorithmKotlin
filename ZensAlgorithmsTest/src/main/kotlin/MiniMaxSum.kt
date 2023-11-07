@@ -1,40 +1,34 @@
 import java.util.*
 
 class MiniMaxSum {
-    fun findMiniMaxSum(){
+
+    fun createLongArray(): LongArray{
         val reader = Scanner(System.`in`)
         val arrInput = LongArray(5)
-        var sumArray = 0L
 
         for (i in 0..4 step 1){
             arrInput[i] = reader.nextLong()
-            sumArray += arrInput[i]
         }
+
         arrInput.sort()
 
-        //Start find Mini-Max Sum problem
+        return arrInput
+    }
+    fun findMiniMaxSum(arrInput: LongArray): String{
+        var sumArray = 0L
+
+        for (i in 0..4 step 1){
+            sumArray += arrInput[i]
+        }
+
         var minArr = 0L
         var maxArr = 0L
         for (i in 0..3 step 1){
             minArr += arrInput[i]
             maxArr += arrInput[5 - 1 - i]
         }
-        println("$minArr $maxArr")
-        //End find Mini-Max Sum problem
 
-        /**Start make bonus
-         * + Count total of array
-         * + Find min in array
-         * + Find max in array
-         * + Find even elements in array
-         * + Find odd elements in array
-         */
-//        println("Total of array: " + sumArray(arrInput))
-//        println("Min in array: " + minOfArray(arrInput))
-//        println("Max in array: " + maxOfArray(arrInput))
-//        println("Even elements in array: " + evenElementsOfArray(arrInput))
-//        println("Odd elements in array: " + oddElementsOfArray(arrInput))
-
+        return "$minArr $maxArr"
     }
 
     fun sumArray(sortedArr: LongArray): Long{
