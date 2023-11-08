@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".views.MainActivity">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -89,6 +90,7 @@
         android:id="@+id/tv_handcrafted_by"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small_1"
         android:layout_marginEnd="@dimen/margin_small_2"
         android:text="@string/handcrafted_by"
         android:textColor="@color/color_handcraft_title"
@@ -127,7 +129,7 @@
             android:layout_height="wrap_content"
             android:text="@string/a_joke_day"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_normal_3" />
+            android:textSize="@dimen/text_size_normal_2" />
 
         <TextView
             android:id="@+id/textView4"
@@ -136,7 +138,7 @@
             android:layout_marginTop="@dimen/margin_normal_2"
             android:text="@string/joke_wrong_content"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_small_3" />
+            android:textSize="@dimen/text_size_small_2" />
 
     </LinearLayout>
 
@@ -144,6 +146,7 @@
         android:id="@+id/tv_joke_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:breakStrategy="high_quality"
         android:layout_marginTop="@dimen/margin_big_2"
         android:textColor="@color/color_joke_content"
         android:layout_marginStart="@dimen/margin_normal_7"
@@ -163,6 +166,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_normal_1"
+        android:breakStrategy="high_quality"
         android:gravity="center"
         android:text="@string/copyrights_content"
         android:textColor="@color/color_copyrights_content"
@@ -186,13 +190,14 @@
         <TextView
             android:id="@+id/btn_funny"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:background="@drawable/bg_button_funny"
             android:text="@string/funny_button_text"
             style="@style/button_style"
             app:layout_constraintStart_toStartOf="@id/guideline7"
             app:layout_constraintEnd_toEndOf="@id/guideline5"
-            app:layout_constraintTop_toBottomOf="@id/guideline4" />
+            app:layout_constraintTop_toBottomOf="@id/guideline4"
+            app:layout_constraintBottom_toBottomOf="@id/btn_not_funny"/>
 
         <TextView
             android:id="@+id/btn_not_funny"
