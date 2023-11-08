@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_small_2">8dp</dimen>
+    <dimen name="margin_normal_1">12dp</dimen>
+    <dimen name="margin_normal_2">16dp</dimen>
+    <dimen name="margin_normal_3">20dp</dimen>
+    <dimen name="margin_normal_4">24dp</dimen>
+    <dimen name="margin_normal_5">28dp</dimen>
+    <dimen name="margin_normal_6">32dp</dimen>
+    <dimen name="margin_normal_7">36dp</dimen>
+    <dimen name="margin_big_1">40dp</dimen>
+    <dimen name="margin_big_2">60dp</dimen>
+    <dimen name="margin_big_3">80dp</dimen>
+    <dimen name="margin_big_4">100dp</dimen>
+
+
+    <dimen name="padding_small_1">4dp</dimen>
+    <dimen name="padding_small_2">6dp</dimen>
+    <dimen name="padding_small_3">8dp</dimen>
+    <dimen name="padding_small_4">10dp</dimen>
+    <dimen name="padding_normal_1">12dp</dimen>
+    <dimen name="padding_normal_2">16dp</dimen>
+    <dimen name="padding_normal_3">20dp</dimen>
+
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_small_2">12sp</dimen>
+    <dimen name="text_size_small_3">14sp</dimen>
+    <dimen name="text_size_normal_1">18sp</dimen>
+    <dimen name="text_size_normal_2">20sp</dimen>
+    <dimen name="text_size_normal_3">22sp</dimen>
+    <dimen name="text_size_normal_4">24sp</dimen>
+</resources>

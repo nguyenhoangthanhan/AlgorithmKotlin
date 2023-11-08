@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="color_small_line">#EAEAEA</color>
+    <color name="color_handcraft_name">#4D4D4D</color>
+    <color name="color_handcraft_title">#999999</color>
+    <color name="color_bg_joke_title">#2AB363</color>
+    <color name="color_joke_content">#6E6E6E</color>
+    <color name="color_funny">#2B7EDA</color>
+    <color name="color_not_funny">#2AB363</color>
+    <color name="color_copyrights_content">#9E9E9E</color>
+    <color name="color_copyrights_title">#606060</color>
+</resources>
