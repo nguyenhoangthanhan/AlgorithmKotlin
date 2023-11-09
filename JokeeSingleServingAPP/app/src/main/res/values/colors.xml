@@ -9,7 +9,9 @@
     <color name="color_bg_joke_title">#2AB363</color>
     <color name="color_joke_content">#6E6E6E</color>
     <color name="color_funny">#2B7EDA</color>
+    <color name="color_funny_clicked">#093C75</color>
     <color name="color_not_funny">#2AB363</color>
+    <color name="color_not_funny_clicked">#0F532B</color>
     <color name="color_copyrights_content">#9E9E9E</color>
     <color name="color_copyrights_title">#606060</color>
 </resources>

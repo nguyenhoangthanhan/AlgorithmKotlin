@@ -1,4 +1,19 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <solid android:color="@color/color_not_funny"/>
-</shape>
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/color_not_funny_clicked"/>
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@color/color_not_funny_clicked"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/color_not_funny"/>
+        </shape>
+    </item>
+
+</selector>
