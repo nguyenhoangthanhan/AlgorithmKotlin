@@ -187,26 +187,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_copyrights_content" />
 
-        <TextView
-            android:id="@+id/btn_funny"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_button_funny"
-            android:text="@string/funny_button_text"
-            style="@style/button_style"
-            app:layout_constraintStart_toStartOf="@id/guideline7"
-            app:layout_constraintEnd_toEndOf="@id/guideline5"
-            app:layout_constraintTop_toBottomOf="@id/guideline4"
-            app:layout_constraintBottom_toBottomOf="@id/btn_not_funny"/>
+    <TextView
+        android:id="@+id/btn_funny"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_button_funny"
+        android:text="@string/funny_button_text"
+        style="@style/button_style"
+        app:layout_constraintStart_toStartOf="@id/guideline7"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"
+        app:layout_constraintBottom_toBottomOf="@id/btn_not_funny"/>
 
-        <TextView
-            android:id="@+id/btn_not_funny"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_button_not_funny"
-            android:text="@string/not_funny_button_text"
-            style="@style/button_style"
-            app:layout_constraintStart_toEndOf="@id/guideline6"
-            app:layout_constraintEnd_toEndOf="@id/guideline8"
-            app:layout_constraintTop_toBottomOf="@id/guideline4" />
+    <TextView
+        android:id="@+id/btn_not_funny"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_not_funny"
+        android:text="@string/not_funny_button_text"
+        style="@style/button_style"
+        app:layout_constraintStart_toEndOf="@id/guideline6"
+        app:layout_constraintEnd_toEndOf="@id/guideline8"
+        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+    <TextView
+        android:id="@+id/btn_clear_cookies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button_funny"
+        android:text="@string/clear_cookies_button"
+        style="@style/button_style"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline4"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -100,6 +100,12 @@ class JokeViewModel(application: Application) : AndroidViewModel(application){
         }
     }
 
+    suspend fun refreshJokes(){
+        viewModelScope.launch(Dispatchers.IO) {
+            jokeStoriesDao.refreshJokes(initJokes())
+        }
+    }
+
     class Factory(val app: Application) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(JokeViewModel::class.java)) {

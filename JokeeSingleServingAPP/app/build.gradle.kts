@@ -39,6 +39,8 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    testOptions.unitTests.isReturnDefaultValues = true
 }
 
 dependencies {
@@ -48,8 +50,14 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation ("org.powermock:powermock-api-mockito:1.6.6")
+    testImplementation ("org.powermock:powermock-module-junit4:1.6.6")
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation ("org.powermock:powermock-api-mockito:1.6.6")
+    androidTestImplementation ("org.powermock:powermock-module-junit4:1.6.6")
 
     val roomVersion = "2.6.0"
     val lifecycle_version = "2.6.2"

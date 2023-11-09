@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity_TAG"
 
-    lateinit var binding:ActivityMainBinding
+    private lateinit var binding:ActivityMainBinding
 
     private var currentJoke:JokeStory? = null
 
@@ -41,11 +41,13 @@ class MainActivity : AppCompatActivity() {
                 binding.tvJokeContent.text = it[0].jokeContent
                 binding.btnFunny.visibility = View.VISIBLE
                 binding.btnNotFunny.visibility = View.VISIBLE
+                binding.btnClearCookies.visibility = View.GONE
             }
             else{
                 binding.tvJokeContent.text = getString(R.string.none_joke)
                 binding.btnFunny.visibility = View.GONE
                 binding.btnNotFunny.visibility = View.GONE
+                binding.btnClearCookies.visibility = View.VISIBLE
             }
         }
     }
@@ -56,6 +58,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnNotFunny.setOnClickListener {
             reviewCurrentJoke()
+        }
+        binding.btnClearCookies.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.refreshJokes()
+            }
         }
     }
 
