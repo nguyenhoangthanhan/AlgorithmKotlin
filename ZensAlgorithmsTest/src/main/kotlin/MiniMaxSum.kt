@@ -10,25 +10,28 @@ class MiniMaxSum {
             arrInput[i] = reader.nextLong()
         }
 
-        arrInput.sort()
+//        arrInput.sort()
 
         return arrInput
     }
     fun findMiniMaxSum(arrInput: LongArray): String{
-        var sumArray = 0L
-
-        for (i in 0..4 step 1){
-            sumArray += arrInput[i]
+        var sum = arrInput[0]
+        var sumMin = 0L
+        var sumMax = 0L
+        var min1 = arrInput[0]
+        var max1 = arrInput[0]
+        for (i in 1..4 step 1){
+            sum+= arrInput[i]
+            if(min1 > arrInput[i]){
+                min1 = arrInput[i]
+            }
+            if(max1 < arrInput[i]){
+                max1 = arrInput[i]
+            }
         }
-
-        var minArr = 0L
-        var maxArr = 0L
-        for (i in 0..3 step 1){
-            minArr += arrInput[i]
-            maxArr += arrInput[5 - 1 - i]
-        }
-
-        return "$minArr $maxArr"
+        sumMin = sum - max1
+        sumMax = sum - min1
+        return ("$sumMin $sumMax")
     }
 
     fun sumArray(sortedArr: LongArray): Long{
