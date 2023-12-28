@@ -36,11 +36,15 @@ fun main(args: Array<String>) {
 //    println(solution.canCompleteCircuit(gas, cost))
 
 //    Zigzag Conversion
-    val ZigzagConversion = ZigzagConversion()
-    var s = "PAYPALISHIRING"
-    var numRows = 4
-    println(ZigzagConversion.convert(s, numRows))
+//    val ZigzagConversion = ZigzagConversion()
+//    var s = "PAYPALISHIRING"
+//    var numRows = 4
+//    println(ZigzagConversion.convert(s, numRows))
 
+    val twoSumII_InputArrayIsSorted_167 = TwoSumII_InputArrayIsSorted_167()
+    var input = intArrayOf(2,3,4)
+    var target = 6
+    println(twoSumII_InputArrayIsSorted_167.twoSum(input, target).contentToString())
 }
 
 fun findMax(input: Long){
