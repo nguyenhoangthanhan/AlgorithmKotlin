@@ -1,5 +1,4 @@
 import java.util.*
-import kotlin.math.max
 
 fun main(args: Array<String>) {
 //    val miniMaxSum = MiniMaxSum()
@@ -41,10 +40,18 @@ fun main(args: Array<String>) {
 //    var numRows = 4
 //    println(ZigzagConversion.convert(s, numRows))
 
-    val twoSumII_InputArrayIsSorted_167 = TwoSumII_InputArrayIsSorted_167()
-    var input = intArrayOf(2,3,4)
-    var target = 6
-    println(twoSumII_InputArrayIsSorted_167.twoSum(input, target).contentToString())
+//    val twoSumII_InputArrayIsSorted_167 = TwoSumII_InputArrayIsSorted_167()
+//    var input = intArrayOf(2,3,4)
+//    var target = 6
+//    println(twoSumII_InputArrayIsSorted_167.twoSum(input, target).contentToString())
+
+
+    val prefixToPosFix = PrefixToPosFix()
+    var pre_exp: String = "*-A/BC-/AKL"
+    println(
+        "Postfix : "
+                + prefixToPosFix.preToPos(pre_exp)
+    )
 }
 
 fun findMax(input: Long){

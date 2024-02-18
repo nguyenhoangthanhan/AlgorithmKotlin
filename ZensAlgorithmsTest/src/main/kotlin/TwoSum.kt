@@ -10,6 +10,9 @@ import javax.swing.tree.TreeNode
  *     var right: TreeNode? = null
  * }
  */
+
+
+/*
 class TwoSum {
     fun isBalanced(root: TreeNode?): Boolean {
         return getHight(root) != -1
@@ -31,3 +34,4 @@ class TwoSum {
         return Math.max(leftHight, rightHight) + 1
     }
 }
+ */
