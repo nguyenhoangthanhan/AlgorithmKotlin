@@ -45,28 +45,32 @@ fun main(args: Array<String>) {
 //    var target = 6
 //    println(twoSumII_InputArrayIsSorted_167.twoSum(input, target).contentToString())
 
+//
+//    val prefixToPosFix = PrefixToPosFix()
+//    var pre_exp: String = "*-A/BC-/AKL"
+//    println(
+//        "Postfix : "
+//                + prefixToPosFix.preToPos(pre_exp)
+//    )
 
-    val prefixToPosFix = PrefixToPosFix()
-    var pre_exp: String = "*-A/BC-/AKL"
-    println(
-        "Postfix : "
-                + prefixToPosFix.preToPos(pre_exp)
-    )
+    val infixToPostFix = InfixToPostFix()
+    val input = "a+b*(c^d-e)^(f+g*h)-i"
+    infixToPostFix.infixToPostfix(input)
 }
 
-fun findMax(input: Long){
-    var maxResult:Long = -input
-    var absInput:Long = if (input < 0) -input else input
+fun findMax(input: Long) {
+    var maxResult: Long = -input
+    var absInput: Long = if (input < 0) -input else input
 
     var inputString = absInput.toString()
 
     var indexResult = 0
     var i = 0
-    if (input > 0){
-        while (i < inputString.length){
+    if (input > 0) {
+        while (i < inputString.length) {
             val stringBuilder = StringBuilder(inputString)
-            if (inputString[i] == '5'){
-                val temp:Long = stringBuilder.deleteAt(i).toString().toLong()
+            if (inputString[i] == '5') {
+                val temp: Long = stringBuilder.deleteAt(i).toString().toLong()
                 if (maxResult < temp) {
                     maxResult = temp
                     indexResult = i
@@ -75,11 +79,11 @@ fun findMax(input: Long){
             i++
         }
 
-    }else{
-        while (i < inputString.length){
+    } else {
+        while (i < inputString.length) {
             val stringBuilder = StringBuilder(inputString)
-            if (inputString[i] == '5'){
-                val temp:Long = stringBuilder.deleteAt(i).toString().toLong()
+            if (inputString[i] == '5') {
+                val temp: Long = stringBuilder.deleteAt(i).toString().toLong()
                 if (maxResult > temp) {
                     maxResult = temp
                     indexResult = i
