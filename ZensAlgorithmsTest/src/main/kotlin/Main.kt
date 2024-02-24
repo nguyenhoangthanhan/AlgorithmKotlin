@@ -53,9 +53,12 @@ fun main(args: Array<String>) {
 //                + prefixToPosFix.preToPos(pre_exp)
 //    )
 
-    val infixToPostFix = InfixToPostFix()
-    val input = "a+b*(c^d-e)^(f+g*h)-i"
-    infixToPostFix.infixToPostfix(input)
+//    val infixToPostFix = InfixToPostFix()
+//    val input = "a+b*(c^d-e)^(f+g*h)-i"
+//    infixToPostFix.infixToPostfix(input)
+
+    val countValueGreaterAllOfBeforeIt = CountValueGreaterAllOfBeforeIt()
+    countValueGreaterAllOfBeforeIt.solution(intArrayOf(1,2,3,55,32,33,2342,35,23,23423,2222,2342342))
 }
 
 fun findMax(input: Long) {

@@ -1,3 +1,4 @@
+/*
 class MergeKSortedLists {
     fun mergeKLists(lists: Array<ListNode?>): ListNode? {
         if (lists == null || lists.length == 0){
@@ -40,3 +41,5 @@ class MergeKSortedLists {
 
     return dummy.next
 }
+
+*/
