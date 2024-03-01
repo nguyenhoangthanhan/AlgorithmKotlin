@@ -18,5 +18,22 @@ class BinaryNode<T>(val value: T) {
         nine.leftChild = eight
 
         val tree = seven
+        println(tree)
+    }
+
+    override fun toString() = diagram(this)
+
+    private fun diagram(node: BinaryNode<T>?,
+                         top: String = "",
+                        root: String = "",
+                        bottom: String = ""): String {
+        return root?.let {
+            if (node?.leftChild == null && node?.rightChild == null){
+                "$root${node?.value}\n"
+            } else {
+                diagram(node?.rightChild, "$top ", "$top ┌──", "$top| ") +
+                        root + "${node?.value}\n" + diagram(node?.leftChild, "$bottom| ", "$bottom└──", "$bottom ")
+            }
+        } ?: "${root}null\n"
     }
 }
