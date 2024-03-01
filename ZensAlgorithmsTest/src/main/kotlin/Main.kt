@@ -68,7 +68,7 @@ fun findMax(input: Long) {
     var maxResult: Long = -input
     var absInput: Long = if (input < 0) -input else input
 
-    var inputString = absInput.toString()
+    val inputString = absInput.toString()
 
     var indexResult = 0
     var i = 0
