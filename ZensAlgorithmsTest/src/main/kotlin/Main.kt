@@ -62,6 +62,9 @@ fun main(args: Array<String>) {
 
 //    val binaryNode = BinaryNode<Int>(1)
 //    binaryNode.demoFun()
+
+    val stackAndQueue = StackAndQueue()
+    stackAndQueue.implementStack()
 }
 
 fun findMax(input: Long) {
