@@ -49,7 +49,7 @@ class AddTwoNumbers {
             resultListNode.`val` = list3[0]
             for (i in 1..list3.size - 1 step 1) {
                 resultListNode.next = ListNode(list3[i])
-                resultListNode = resultListNode.next
+//                resultListNode = resultListNode.next
             }
         }
         return head

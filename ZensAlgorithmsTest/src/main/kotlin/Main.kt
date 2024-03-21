@@ -63,8 +63,11 @@ fun main(args: Array<String>) {
 //    val binaryNode = BinaryNode<Int>(1)
 //    binaryNode.demoFun()
 
-    val stackAndQueue = StackAndQueue()
-    stackAndQueue.implementStack()
+//    val stackAndQueue = StackAndQueue()
+//    stackAndQueue.implementStack()
+
+    val minimumSizeSubarraySum = MinimumSizeSubarraySum()
+    println("result = " + minimumSizeSubarraySum.minSubArrayLen(7, intArrayOf(2,3,1,2,4,3)))
 }
 
 fun findMax(input: Long) {
