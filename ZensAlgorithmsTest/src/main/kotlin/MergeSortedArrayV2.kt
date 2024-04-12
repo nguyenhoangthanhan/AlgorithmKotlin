@@ -7,4 +7,6 @@ class MergeSortedArrayV2 {
             nums1[k--] = if (i < 0 || nums1[i] < nums2[j]) nums2[j--] else nums1[i--]
         }
     }
-}
+
+
+}data class Customer(val name: String, val email: String)
