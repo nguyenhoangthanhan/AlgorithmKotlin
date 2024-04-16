@@ -1,4 +1,5 @@
 class LinkedListDemo1 {
+    //https://blog.logrocket.com/arraylist-vs-linkedlist-kotlin-data-structure/
     fun demo() {
         // initializing an empty ArrayList
         var list = ArrayList<Int>()
@@ -21,5 +22,22 @@ class LinkedListDemo1 {
         list3.addAll(listOf(1, 2, 3))
 // getting the element of index 1
         println(list3.get(1)) // 2
+
+        var list4 = ArrayList<Int>()
+        list4.addAll(listOf(1, 2, 3))
+// setting 4 in position 1
+        list4.set(1, 4)
+        println(list4) // [1, 4, 3]
+
+        var list5 = ArrayList<Int>()
+        list5.addAll(listOf(1, 2, 3))
+        println(list5.indexOf(1)) // 0
+        println(list5.indexOf(4)) // -1
+
+        var list6 = ArrayList<Int>()
+        list6.addAll(listOf(1, 2, 3))
+// removing the element 2 from the list
+        list6.remove(2)
+        println(list6) // [1, 3]
     }
 }
