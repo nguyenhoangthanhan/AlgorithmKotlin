@@ -39,5 +39,32 @@ class LinkedListDemo1 {
 // removing the element 2 from the list
         list6.remove(2)
         println(list6) // [1, 3]
+
+        var list7 = ArrayList<Int>()
+        list7.addAll(listOf(1, 2, 3))
+// removing the element of index 0 from the list
+        list7.removeAt(0)
+        println(list7) // [2, 3]
+
+        var list8 = ArrayList<Int>()
+        list8.addAll(listOf(1, 2, 3))
+// clearing the list
+        list8.clear()
+        println(list8) // []
+
+        var list9 = ArrayList<Int>()
+// adding 1, 2, 3 to the list
+        list9.addAll(listOf(1, 2, 3))
+        println(list9.size) // 3
+
+        // initializing an ArrayList with the [1, 2, 3] list
+        val list10 = ArrayList<Int>(listOf(1,2,3))
+        println(list10)
+
+        // getting an ArrayList from the [1, 2, 3] list
+        val list11 = arrayListOf(1, 2, 3)
+// printing the Class name of list
+        println(list11::class.simpleName)
+        println(list11)
     }
 }
