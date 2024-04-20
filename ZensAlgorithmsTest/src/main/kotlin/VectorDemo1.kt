@@ -9,7 +9,7 @@ class VectorDemo1 {
 
 
         var planets2 =  Vector<String>();
-        planets2.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+        planets2.addAll(listOf("Mercury", "Venus", "Earth", "Pluto1"))
 
         println("Vector capacity = " + planets2.capacity())
     }
