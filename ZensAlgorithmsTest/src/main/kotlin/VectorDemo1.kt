@@ -24,5 +24,14 @@ class VectorDemo1 {
 
         planets4.addElement("Sirius A3")
         println("Vector = " + planets4)
+
+        var planets5 =  Vector<String>();
+        planets5.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        planets5.addElement("Sirius A3")
+        for(planet in planets5)
+        {
+            println(planet);
+        }
     }
 }
