@@ -18,5 +18,11 @@ class VectorDemo1 {
 
         planets3.ensureCapacity(100)
         println("Vector capacity = " + planets3.capacity())
+
+        var planets4 =  Vector<String>();
+        planets4.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        planets4.addElement("Sirius A3")
+        println("Vector = " + planets4)
     }
 }
