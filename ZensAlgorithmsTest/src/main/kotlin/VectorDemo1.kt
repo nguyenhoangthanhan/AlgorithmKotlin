@@ -41,5 +41,10 @@ class VectorDemo1 {
         {
             println(planet)
         }
+        var planets7 =  Vector<String>();
+        planets7.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        var firstPlanet = planets7.firstElement()
+        println("First planet = " + firstPlanet)
     }
 }
