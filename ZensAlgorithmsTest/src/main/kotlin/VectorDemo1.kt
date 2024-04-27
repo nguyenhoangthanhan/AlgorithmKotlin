@@ -59,5 +59,16 @@ class VectorDemo1 {
         {
             println(planet);
         }
+
+
+        var planets10 =  Vector<String>();
+        planets10.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        planets10.removeAt(2)
+
+        for(planet in planets10)
+        {
+            println(planet)
+        }
     }
 }
