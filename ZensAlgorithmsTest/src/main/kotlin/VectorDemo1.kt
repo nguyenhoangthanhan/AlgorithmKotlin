@@ -70,5 +70,16 @@ class VectorDemo1 {
         {
             println(planet)
         }
+
+        var planets11 =  Vector<String>();
+        planets11.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        planets11.removeIf { x -> x.startsWith("E") }
+
+        for(planet in planets11)
+        {
+            println(planet)
+        }
+
     }
 }
