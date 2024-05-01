@@ -81,5 +81,14 @@ class VectorDemo1 {
             println(planet)
         }
 
+        var planets12 =  Vector<String>();
+        planets12.addAll(listOf("Mercury", "Venus", "Earth", "Pluto"))
+
+        planets12.reverse()
+
+        for(planet in planets12)
+        {
+            println(planet)
+        }
     }
 }
