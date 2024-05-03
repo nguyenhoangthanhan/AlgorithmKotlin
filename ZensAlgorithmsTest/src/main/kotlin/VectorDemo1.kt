@@ -90,5 +90,11 @@ class VectorDemo1 {
         {
             println(planet)
         }
+
+        var numbers13 =  Vector<Int>();
+        numbers13.addAll(listOf(21, 44, 99, 74, 33))
+
+        var value = numbers13.indexOf(99)
+        println("value = " + value)
     }
 }
