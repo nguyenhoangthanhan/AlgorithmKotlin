@@ -96,5 +96,11 @@ class VectorDemo1 {
 
         var value = numbers13.indexOf(99)
         println("value = " + value)
+
+        var numbers14 =  Vector<Int>();
+        numbers14.addAll(listOf(21, 44, 99, 74, 33))
+
+        var value2 = numbers14[2]
+        println("value = " + value2)
     }
 }
