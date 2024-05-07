@@ -102,5 +102,11 @@ class VectorDemo1 {
 
         var value2 = numbers14[2]
         println("value = " + value2)
+
+        var numbers15 =  Vector<Int>();
+        numbers15.addAll(listOf(21, 44, 99, 74, 33))
+
+        var value15 = numbers15.get(2)
+        println("value = " + value15)
     }
 }
