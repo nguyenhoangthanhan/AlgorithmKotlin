@@ -114,6 +114,11 @@ class VectorDemo1 {
 
         var maxValue16 = numbers16.min()
         println("Vector Min value16 = " + maxValue16)
+        var numbers17 =  Vector<Int>();
+        numbers17.addAll(listOf(21, 44, 99, 74, 33))
+
+        var maxValue17 = numbers17.max()
+        println("Vector Max value = " + maxValue17)
     }
 
 }
