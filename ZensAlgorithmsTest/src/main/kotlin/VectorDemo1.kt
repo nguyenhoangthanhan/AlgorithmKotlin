@@ -119,6 +119,20 @@ class VectorDemo1 {
 
         var maxValue17 = numbers17.max()
         println("Vector Max value = " + maxValue17)
+
+        var planets18 =  Vector<String>();
+        planets18.addAll(listOf("Mercury", "Venus", "Earth", "Earth", "Venus", "Pluto"))
+
+        planets18.clear()
+
+        if(planets18.isEmpty())
+        {
+            println("Planets vector is empty!")
+        }
+        else
+        {
+            println("Planets vector is NOT Empty!")
+        }
     }
 
 }
