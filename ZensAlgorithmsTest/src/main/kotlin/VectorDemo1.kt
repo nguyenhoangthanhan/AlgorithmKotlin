@@ -133,6 +133,22 @@ class VectorDemo1 {
         {
             println("Planets vector is NOT Empty!")
         }
+
+
+        //We can remove duplicate elements from vector
+        // and get a new List, using distinct function.
+        // In the below example, we have some duplicate
+        // entries in our planets vector. We then used
+        // distinct function call to get a new list without
+        // the duplicates.
+        var planets19 =  Vector<String>();
+        planets19.addAll(listOf("Mercury", "Venus", "Earth", "Earth", "Venus", "Pluto"))
+        var uniquePlanets = planets19.distinct()
+
+        for(planet in uniquePlanets)
+        {
+            println(planet)
+        }
     }
 
 }
