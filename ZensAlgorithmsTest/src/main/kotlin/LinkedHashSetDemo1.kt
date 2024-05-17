@@ -9,5 +9,24 @@ class LinkedHashSetDemo1 {
         {
             println(planet);
         }
+
+
+        var planets2 =  LinkedHashSet<String>();
+
+        planets2.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter"));
+
+        println("============== Before add ================");
+        for(planet in planets2)
+        {
+            println(planet);
+        }
+
+        planets2.add("Neptune");
+
+        println("============== After add ================");
+        for(planet in planets2)
+        {
+            println(planet);
+        }
     }
 }
