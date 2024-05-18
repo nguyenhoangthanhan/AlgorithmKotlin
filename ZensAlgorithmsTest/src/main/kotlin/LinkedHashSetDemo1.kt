@@ -28,5 +28,25 @@ class LinkedHashSetDemo1 {
         {
             println(planet);
         }
+
+
+        var planets3 =  LinkedHashSet<String>()
+
+        planets3.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter"))
+
+        println("============== Before clear ================")
+        for(planet in planets3)
+        {
+            println(planet)
+        }
+
+        planets3.clear()
+
+        println("============== After clear ================")
+        println("Planets isEmpty = " + planets3.isEmpty())
+        for(planet in planets3)
+        {
+            println(planet)
+        }
     }
 }
