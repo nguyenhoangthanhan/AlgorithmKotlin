@@ -48,5 +48,26 @@ class LinkedHashSetDemo1 {
         {
             println(planet)
         }
+
+
+
+        var planets4 =  LinkedHashSet<String>()
+
+        planets4.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter"))
+
+        println("============== Before clone ================")
+        for(planet in planets4)
+        {
+            println(planet)
+        }
+
+
+        var cloneOfThePlanets = planets4.clone() as LinkedHashSet<String>;
+
+        println("============== After clone ================")
+        for(planet in cloneOfThePlanets)
+        {
+            println(planet)
+        }
     }
 }
