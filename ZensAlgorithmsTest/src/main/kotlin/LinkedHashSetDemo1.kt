@@ -78,5 +78,13 @@ class LinkedHashSetDemo1 {
         println("============== Contains Check ================")
         println("Does it contain earth? " + planets5.contains("Earth"))
         println("Does it contain Pluto? " + planets5.contains("Pluto"))
+
+
+        var planets6 = LinkedHashSet<String>()
+
+        planets6.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Neptune"))
+
+        println("============== Size check ================")
+        println("Count of elements in Set " + planets6.size)
     }
 }
