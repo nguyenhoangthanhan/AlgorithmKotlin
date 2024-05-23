@@ -86,5 +86,18 @@ class LinkedHashSetDemo1 {
 
         println("============== Size check ================")
         println("Count of elements in Set " + planets6.size)
+
+
+        var planets7 = LinkedHashSet<String>()
+
+        planets7.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Neptune"))
+
+        println("============== Remove from LinkedHashSet ================")
+        planets7.remove("Earth")
+
+        for(planet in planets7)
+        {
+            println("Planet is $planet")
+        }
     }
 }
