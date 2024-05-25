@@ -99,5 +99,14 @@ class LinkedHashSetDemo1 {
         {
             println("Planet is $planet")
         }
+
+        var theNumbers = LinkedHashSet<Int>()
+        theNumbers.addAll(listOf(4, 8, 15, 16, 23, 42))
+
+        println("============== LinkedHashSet - theNumbers Min Value ================")
+
+        var minValue = theNumbers.min()
+
+        println("LinkedHashSet Min Value = $minValue")
     }
 }
