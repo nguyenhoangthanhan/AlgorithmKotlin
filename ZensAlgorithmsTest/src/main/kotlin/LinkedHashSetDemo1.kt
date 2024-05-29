@@ -108,5 +108,15 @@ class LinkedHashSetDemo1 {
         var minValue = theNumbers.min()
 
         println("LinkedHashSet Min Value = $minValue")
+
+
+        var theNumbers2 = LinkedHashSet<Int>()
+        theNumbers2.addAll(listOf(4, 8, 15, 16, 23, 42))
+
+        println("============== LinkedHashSet - theNumbers Max Value ================")
+
+        var maxValue = theNumbers2.max()
+
+        println("LinkedHashSet Max Value = $maxValue")
     }
 }
