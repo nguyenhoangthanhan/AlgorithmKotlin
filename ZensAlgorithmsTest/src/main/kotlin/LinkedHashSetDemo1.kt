@@ -110,12 +110,12 @@ class LinkedHashSetDemo1 {
         println("LinkedHashSet Min Value = $minValue")
 
 
-        var theNumbers2 = LinkedHashSet<Int>()
-        theNumbers2.addAll(listOf(4, 8, 15, 16, 23, 42))
+        var theNumbers3 = LinkedHashSet<Int>()
+        theNumbers3.addAll(listOf(4, 8, 15, 16, 23, 42))
 
         println("============== LinkedHashSet - theNumbers Max Value ================")
 
-        var maxValue = theNumbers2.max()
+        var maxValue = theNumbers3.max()
 
         println("LinkedHashSet Max Value = $maxValue")
     }
