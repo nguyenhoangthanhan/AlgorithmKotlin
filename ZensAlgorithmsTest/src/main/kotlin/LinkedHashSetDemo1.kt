@@ -120,3 +120,21 @@ class LinkedHashSetDemo1 {
         println("LinkedHashSet Max Value = $maxValue")
     }
 }
+
+fun hashSet1(args: Array<String>)
+{
+    var planets = LinkedHashSet<String>()
+    planets.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Neptune"))
+
+    println("============== Planets isEmpty check in LinkedHashSet ================")
+
+    planets.clear()
+    if(planets.isEmpty())
+    {
+        println("Planets LinkedHashSet is empty!")
+    }
+    else
+    {
+        println("Planets LinkedHashSet is NOT Empty!")
+    }
+}
