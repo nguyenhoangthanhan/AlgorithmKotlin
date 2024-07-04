@@ -138,3 +138,14 @@ fun hashSet1(args: Array<String>)
         println("Planets LinkedHashSet is NOT Empty!")
     }
 }
+fun hashSet2(args: Array<String>)
+{
+    var planets = LinkedHashSet<String>()
+    planets.addAll(listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Neptune"))
+
+    println("============== Count predicate in LinkedHashSet ================")
+
+    var numOfPlanetsStartingWithE = planets.count { x -> x.startsWith("E") }
+
+    println("Count of planets starting with E in LinkedHashSet = " + numOfPlanetsStartingWithE)
+}
