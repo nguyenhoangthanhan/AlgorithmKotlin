@@ -16,4 +16,3 @@ class TwoSumV2 {
         throw IllegalStateException("no solution found")
     }
 }
-}
