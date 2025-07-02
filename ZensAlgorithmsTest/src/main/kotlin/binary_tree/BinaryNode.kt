@@ -1,22 +1,22 @@
 package binary_tree
 
 class BinaryNode<T>(val value: T) {
-    var leftChild: BinaryNode<T>? = null
-    var rightChild: BinaryNode<T>? = null
+    var left: BinaryNode<T>? = null
+    var right: BinaryNode<T>? = null
 
     override fun toString() = ""
-    var listResult:MutableMap<Int, MutableList<T>> = mutableMapOf()
+    var listResult: MutableMap<Int, MutableList<T>> = mutableMapOf()
 
     private fun diagram(node: BinaryNode<T>?,
                         top: String = "",
                         root: String = "",
                         bottom: String = ""): String {
         return root?.let {
-            if (node?.leftChild == null && node?.rightChild == null){
+            if (node?.left == null && node?.right == null) {
                 "$root${node?.value}\n"
             } else {
-                diagram(node?.rightChild, "$top ", "$top ┌──", "$top| ") +
-                        root + "${node?.value}\n" + diagram(node?.leftChild, "$bottom| ", "$bottom└──", "$bottom ")
+                diagram(node?.right, "$top ", "$top ┌──", "$top| ") +
+                        root + "${node?.value}\n" + diagram(node?.left, "$bottom| ", "$bottom└──", "$bottom ")
             }
         } ?: "${root}null\n"
     }
@@ -34,22 +34,23 @@ class BinaryNode<T>(val value: T) {
 
 
         val tempDeep = deep + 1
-        note.leftChild?.let {
+        note.left?.let {
             printBinaryTree(it, tempDeep)
         }
-        note.rightChild?.let {
+        note.right?.let {
             printBinaryTree(it, tempDeep)
         }
     }
+
     fun inorderTraversal(note: BinaryNode<T>, listResult: MutableList<T>) {
-        note.leftChild?.let {
+        note.left?.let {
             inorderTraversal(it, listResult)
         }
         note?.value?.let {
             listResult.add(it)
         }
         print("${note.value},")
-        note.rightChild?.let {
+        note.right?.let {
             inorderTraversal(it, listResult)
         }
     }
@@ -58,16 +59,16 @@ class BinaryNode<T>(val value: T) {
     var resultMinDepth = Int.MAX_VALUE
     fun minDepth(note: BinaryNode<T>, deep: Int) {
         val tempDeep = deep + 1
-        if (note.rightChild == null && note.leftChild == null) {
+        if (note.right == null && note.left == null) {
             if (resultMinDepth > tempDeep) {
                 resultMinDepth = tempDeep
             }
         }
 
-        note.leftChild?.let {
+        note.left?.let {
             minDepth(it, tempDeep)
         }
-        note.rightChild?.let {
+        note.right?.let {
             minDepth(it, tempDeep)
         }
     }
@@ -78,18 +79,18 @@ class BinaryNode<T>(val value: T) {
         pathSumCurrent += note.value
 //        println("pathSumCurrent = $pathSumCurrent")
 //        println("note.value = ${note.value}")
-        if (note.rightChild == null && note.leftChild == null) {
+        if (note.right == null && note.left == null) {
             if (pathSumCurrent == targetSum) {
                 return true
             }
         }
-        note.leftChild?.let {
+        note.left?.let {
             val leftR = pathSum(it, targetSum)
             if (leftR) {
                 return true
             }
         }
-        note.rightChild?.let {
+        note.right?.let {
             val rightR = pathSum(it, targetSum)
             if (rightR) {
                 return true
@@ -104,20 +105,20 @@ class BinaryNode<T>(val value: T) {
     val listResultBinaryTreePreorderTraversal = mutableListOf<Int>()
     fun binaryTreePreorderTraversal(note: BinaryNode<Int>) {
         listResultBinaryTreePreorderTraversal.add(note.value)
-        note.leftChild?.let {
+        note.left?.let {
             binaryTreePreorderTraversal(it)
         }
-        note.rightChild?.let {
+        note.right?.let {
             binaryTreePreorderTraversal(it)
         }
     }
 
     val listResultBinaryTreePostorderTraversal = mutableListOf<Int>()
     fun binaryTreePostorderTraversal(note: BinaryNode<Int>) {
-        note.leftChild?.let {
+        note.left?.let {
             binaryTreePostorderTraversal(it)
         }
-        note.rightChild?.let {
+        note.right?.let {
             binaryTreePostorderTraversal(it)
         }
         listResultBinaryTreePostorderTraversal.add(note.value)
@@ -125,26 +126,72 @@ class BinaryNode<T>(val value: T) {
 
     var countCompleteTreeNodesR = 0
     fun countCompleteTreeNodes(note: BinaryNode<Int>) {
-        countCompleteTreeNodesR ++
-        note.leftChild?.let {
+        countCompleteTreeNodesR++
+        note.left?.let {
             countCompleteTreeNodes(it)
         }
-        note.rightChild?.let {
+        note.right?.let {
             countCompleteTreeNodes(it)
         }
     }
+
+    fun invertTree(note: BinaryNode<Int>, newNote: BinaryNode<Int>, addPosition: String) {
+        var currentNewNote = newNote
+        when (addPosition) {
+            "right" -> {
+                currentNewNote.left = BinaryNode(note.value)
+                currentNewNote = currentNewNote.left!!
+            }
+
+            "left" -> {
+                currentNewNote.right = BinaryNode(note.value)
+                currentNewNote = currentNewNote.right!!
+            }
+        }
+        note.right?.let {
+            invertTree(it, currentNewNote, "right")
+        }
+        note.left?.let {
+            invertTree(it, currentNewNote, "left")
+        }
+    }
+
+    val resultOfBinaryTreePaths = mutableListOf<String>()
+    val binaryTreePathsCurrent = StringBuilder()
+    fun binaryTreePaths(note: BinaryNode<Int>) {
+        val subString: String
+        if (note.right == null && note.left == null) {
+            subString = "${note.value}"
+            binaryTreePathsCurrent.append(subString)
+            resultOfBinaryTreePaths.add(binaryTreePathsCurrent.toString())
+        } else {
+            subString = "${note.value}->"
+            binaryTreePathsCurrent.append(subString)
+        }
+        note.left?.let {
+            binaryTreePaths(it)
+        }
+        note.right?.let {
+            binaryTreePaths(it)
+        }
+        binaryTreePathsCurrent.deleteRange(
+                binaryTreePathsCurrent.length - subString.length,
+                binaryTreePathsCurrent.length
+        )
+    }
+
 }
 
-fun demoFun(){
+fun demoFun() {
     val zero = BinaryNode(1)
-    zero.leftChild = BinaryNode(2)
-    zero.rightChild = BinaryNode(3)
-    zero.leftChild?.leftChild = BinaryNode(4)
-    zero.leftChild?.leftChild?.leftChild = BinaryNode(8)
-    zero.leftChild?.leftChild?.rightChild = BinaryNode(9)
-    zero.leftChild?.rightChild = BinaryNode(5)
-    zero.rightChild?.leftChild = BinaryNode(6)
-    zero.rightChild?.rightChild = BinaryNode(7)
+    zero.left = BinaryNode(2)
+    zero.right = BinaryNode(3)
+    zero.left?.left = BinaryNode(4)
+    zero.left?.left?.left = BinaryNode(8)
+    zero.left?.left?.right = BinaryNode(9)
+    zero.left?.right = BinaryNode(5)
+    zero.right?.left = BinaryNode(6)
+    zero.right?.right = BinaryNode(7)
 
     zero.printBinaryTree(zero, 0)
     for ((key, value) in zero.listResult) {
@@ -157,9 +204,9 @@ fun demoFun(){
 fun inorderTraversalDemo(): List<Int> {
     val listResult = mutableListOf<Int>()
     val zero = BinaryNode(1)
-    zero.leftChild = null
-    zero.rightChild = BinaryNode(2)
-    zero.rightChild?.leftChild = BinaryNode(3)
+    zero.left = null
+    zero.right = BinaryNode(2)
+    zero.right?.left = BinaryNode(3)
 
     zero.inorderTraversal(zero, listResult)
     return listOf()
@@ -168,14 +215,14 @@ fun inorderTraversalDemo(): List<Int> {
 fun inorderTraversalDemo2(): List<Int> {
     val listResult = mutableListOf<Int>()
     val zero = BinaryNode(1)
-    zero.leftChild = BinaryNode(2)
-    zero.leftChild?.leftChild = BinaryNode(4)
-    zero.leftChild?.rightChild = BinaryNode(5)
-    zero.leftChild?.rightChild?.leftChild = BinaryNode(6)
-    zero.leftChild?.rightChild?.rightChild = BinaryNode(7)
-    zero.rightChild = BinaryNode(3)
-    zero.rightChild?.rightChild = BinaryNode(8)
-    zero.rightChild?.rightChild?.leftChild = BinaryNode(9)
+    zero.left = BinaryNode(2)
+    zero.left?.left = BinaryNode(4)
+    zero.left?.right = BinaryNode(5)
+    zero.left?.right?.left = BinaryNode(6)
+    zero.left?.right?.right = BinaryNode(7)
+    zero.right = BinaryNode(3)
+    zero.right?.right = BinaryNode(8)
+    zero.right?.right?.left = BinaryNode(9)
 
     zero.inorderTraversal(zero, listResult)
     return listOf()
