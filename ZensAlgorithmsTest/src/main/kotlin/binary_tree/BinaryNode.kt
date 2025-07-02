@@ -1,3 +1,5 @@
+package binary_tree
+
 typealias Visitor<T> = (T) -> Unit
 
 class BinaryNode<T>(val value: T) {
@@ -8,7 +10,7 @@ class BinaryNode<T>(val value: T) {
     var listResult:MutableMap<Int, MutableList<T>> = mutableMapOf()
 
     private fun diagram(node: BinaryNode<T>?,
-                         top: String = "",
+                        top: String = "",
                         root: String = "",
                         bottom: String = ""): String {
         return root?.let {
@@ -70,6 +72,34 @@ class BinaryNode<T>(val value: T) {
         note.rightChild?.let {
             minDepth(it, tempDeep)
         }
+    }
+
+
+    var pathSumCurrent = 0
+    fun pathSum(note: BinaryNode<Int>, targetSum: Int): Boolean {
+        pathSumCurrent += note.value
+//        println("pathSumCurrent = $pathSumCurrent")
+//        println("note.value = ${note.value}")
+        if (note.rightChild == null && note.leftChild == null) {
+            if (pathSumCurrent == targetSum) {
+                return true
+            }
+        }
+        note.leftChild?.let {
+            val leftR = pathSum(it, targetSum)
+            if (leftR) {
+                return true
+            }
+        }
+        note.rightChild?.let {
+            val rightR = pathSum(it, targetSum)
+            if (rightR) {
+                return true
+            }
+        }
+        pathSumCurrent -= note.value
+//        println("pathSumCurrent2 = $pathSumCurrent")
+        return false
     }
 }
 
