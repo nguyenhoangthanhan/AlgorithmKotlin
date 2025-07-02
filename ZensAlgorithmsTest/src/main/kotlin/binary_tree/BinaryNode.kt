@@ -1,7 +1,5 @@
 package binary_tree
 
-typealias Visitor<T> = (T) -> Unit
-
 class BinaryNode<T>(val value: T) {
     var leftChild: BinaryNode<T>? = null
     var rightChild: BinaryNode<T>? = null
@@ -100,6 +98,40 @@ class BinaryNode<T>(val value: T) {
         pathSumCurrent -= note.value
 //        println("pathSumCurrent2 = $pathSumCurrent")
         return false
+    }
+
+
+    val listResultBinaryTreePreorderTraversal = mutableListOf<Int>()
+    fun binaryTreePreorderTraversal(note: BinaryNode<Int>) {
+        listResultBinaryTreePreorderTraversal.add(note.value)
+        note.leftChild?.let {
+            binaryTreePreorderTraversal(it)
+        }
+        note.rightChild?.let {
+            binaryTreePreorderTraversal(it)
+        }
+    }
+
+    val listResultBinaryTreePostorderTraversal = mutableListOf<Int>()
+    fun binaryTreePostorderTraversal(note: BinaryNode<Int>) {
+        note.leftChild?.let {
+            binaryTreePostorderTraversal(it)
+        }
+        note.rightChild?.let {
+            binaryTreePostorderTraversal(it)
+        }
+        listResultBinaryTreePostorderTraversal.add(note.value)
+    }
+
+    var countCompleteTreeNodesR = 0
+    fun countCompleteTreeNodes(note: BinaryNode<Int>) {
+        countCompleteTreeNodesR ++
+        note.leftChild?.let {
+            countCompleteTreeNodes(it)
+        }
+        note.rightChild?.let {
+            countCompleteTreeNodes(it)
+        }
     }
 }
 
