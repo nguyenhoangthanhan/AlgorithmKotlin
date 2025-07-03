@@ -180,6 +180,23 @@ class BinaryNode<T>(val value: T) {
         )
     }
 
+    var resultOfRangeSumOfBST = 0
+    fun rangeSumOfBST(note: BinaryNode<Int>, low: Int, high: Int) {
+        if (note.value in low..high) {
+            resultOfRangeSumOfBST += note.value
+        }
+        note.left?.let {
+            if (note.value > low) {
+                rangeSumOfBST(it, low, high)
+            }
+        }
+        note.right?.let {
+            if (note.value < high) {
+                rangeSumOfBST(it, low, high)
+            }
+        }
+    }
+
 }
 
 fun demoFun() {
