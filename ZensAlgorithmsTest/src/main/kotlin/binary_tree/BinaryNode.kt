@@ -197,6 +197,46 @@ class BinaryNode<T>(val value: T) {
         }
     }
 
+    fun evaluateBooleanBinaryTree(root: BinaryNode<Int>): Boolean {
+        when (root.value) {
+            0 -> {
+                return false
+            }
+
+            1 -> return true
+
+            2 -> {
+                var result1 = false
+                var result2 = false
+                root.left?.let {
+                    result1 = evaluateBooleanBinaryTree(it)
+                }
+                root.right?.let {
+                    result2 = evaluateBooleanBinaryTree(it)
+                }
+
+                return result1 || result2
+            }
+
+            3 -> {
+                var result1 = false
+                var result2 = false
+                root.left?.let {
+                    result1 = evaluateBooleanBinaryTree(it)
+                }
+                root.right?.let {
+                    result2 = evaluateBooleanBinaryTree(it)
+                }
+
+                return result1 && result2
+            }
+
+            else -> {
+                return false
+            }
+        }
+    }
+
 }
 
 fun demoFun() {
