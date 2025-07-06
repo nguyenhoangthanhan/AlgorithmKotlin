@@ -237,6 +237,26 @@ class BinaryNode<T>(val value: T) {
         }
     }
 
+    var resultOfSumOfLeftLeaves = 0
+    fun sumOfLeftLeaves(note: BinaryNode<Int>, forceSide: String) {
+        when (forceSide) {
+            "right" -> {
+            }
+
+            "left" -> {
+                if (note.right == null && note.left == null) {
+                    resultOfSumOfLeftLeaves += note.value
+                }
+            }
+        }
+        note.right?.let {
+            sumOfLeftLeaves(it, "right")
+        }
+        note.left?.let {
+            sumOfLeftLeaves(it, "left")
+        }
+    }
+
 }
 
 fun demoFun() {
