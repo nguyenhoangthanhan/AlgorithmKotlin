@@ -1,5 +1,7 @@
 package binary_tree
 
+import kotlin.math.max
+
 class BinaryNode<T>(val value: T) {
     var left: BinaryNode<T>? = null
     var right: BinaryNode<T>? = null
@@ -25,7 +27,7 @@ class BinaryNode<T>(val value: T) {
 
 
     fun printBinaryTree(note: BinaryNode<T>, deep: Int) {
-//        print("${note.value},")
+        print("${note.value},")
         if (!listResult.containsKey(deep)) {
             listResult[deep] = mutableListOf(note.value)
         } else {
@@ -71,6 +73,28 @@ class BinaryNode<T>(val value: T) {
         note.right?.let {
             minDepth(it, tempDeep)
         }
+    }
+
+
+    fun maxDepth(note: BinaryNode<Int>): Int {
+        var resultMaxDepth = Int.MIN_VALUE
+        fun maxDepth(note: BinaryNode<Int>, deep: Int) {
+            val tempDeep = deep + 1
+            if (note.right == null && note.left == null) {
+                if (resultMaxDepth < tempDeep) {
+                    resultMaxDepth = tempDeep
+                }
+            }
+
+            note.left?.let {
+                maxDepth(it, tempDeep)
+            }
+            note.right?.let {
+                maxDepth(it, tempDeep)
+            }
+        }
+        maxDepth(note, 0)
+        return resultMaxDepth
     }
 
 
@@ -256,6 +280,22 @@ class BinaryNode<T>(val value: T) {
             sumOfLeftLeaves(it, "left")
         }
     }
+
+    fun diameterOfBinaryTree(note: BinaryNode<Int>): Int {
+        var resultOfDiameterOfBinaryTree = 0
+        fun diameterOfOneNodeBinaryTree(note: BinaryNode<Int>?): Int {
+            if (note == null) return 0
+            val leftValue = diameterOfOneNodeBinaryTree(note.left)
+            val rightValue = diameterOfOneNodeBinaryTree(note.right)
+            resultOfDiameterOfBinaryTree = maxOf(leftValue + rightValue, resultOfDiameterOfBinaryTree)
+            val ddd = maxOf(leftValue, rightValue) + 1
+            return ddd
+        }
+        diameterOfOneNodeBinaryTree(note)
+        return resultOfDiameterOfBinaryTree
+    }
+
+
 
 }
 
