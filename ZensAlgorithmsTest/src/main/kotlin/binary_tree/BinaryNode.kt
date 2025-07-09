@@ -1,5 +1,6 @@
 package binary_tree
 
+import kotlin.math.abs
 import kotlin.math.max
 
 class BinaryNode<T>(val value: T) {
@@ -293,6 +294,34 @@ class BinaryNode<T>(val value: T) {
         }
         diameterOfOneNodeBinaryTree(note)
         return resultOfDiameterOfBinaryTree
+    }
+
+    var binaryTreeTiltResult = 0
+    fun binaryTreeTilt(note: BinaryNode<Int>?): Int {
+        if (note == null){
+//            println("-------------------------------------------------------")
+            return 0
+        } else {
+            val value1: Int = if (note.left == null && note.right == null) {
+//                println("note.val1 = ${note.value}")
+//                println("value1 = $value")
+                binaryTreeTiltResult += 0
+//                println("binaryTreeTiltResult1 = $binaryTreeTiltResult")
+                note.value
+            } else {
+                val x1 = binaryTreeTilt(note.left)
+                val x2 = binaryTreeTilt(note.right)
+                val value = abs(x1 - x2)
+//                println("note.val2 = ${note.value}")
+//                println("value2 = $value")
+                binaryTreeTiltResult += value
+//                println("binaryTreeTiltResult2 = $binaryTreeTiltResult")
+                note.value + x1 + x2
+            }
+//            println("-------------------------------------------------------")
+
+            return value1
+        }
     }
 
 
